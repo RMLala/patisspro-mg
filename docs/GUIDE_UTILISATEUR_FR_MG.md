@@ -45,3 +45,20 @@ Ao amin’ny **Fikirana**, avoahy JSON ny tahiry na CSV ny baiko. Rehefa averina
 
 ### Fiteny sy santionany
 Tsindrio ny bokotra MG/FR hanovana fiteny. Ampiasao **Fafao ny santionany** raha te hiverina amin’ny angona ohatra; manaova tahiry aloha.
+
+
+## Phase 2 — recettes et calcul du coût
+
+### Français
+Dans **Produits & recettes**, créez une recette puis choisissez les matières ou sous-recettes enregistrées. Pour chaque ligne, indiquez quantité et unité. Saisissez le rendement du lot, le coût d'emballage, la main-d'œuvre, les charges indirectes et la marge cible. L'application calcule le coût complet du lot, le coût par portion et un prix conseillé. Le champ de rendement souhaité affiche les quantités proportionnelles.
+
+Les unités kg/g et L/mL sont automatiquement converties. Les autres unités doivent correspondre exactement. Une sous-recette peut être réutilisée dans plusieurs recettes ; les cycles sont refusés. Lorsqu'une fiche existante change, sa version précédente, la date et son coût par portion sont conservés dans l'historique visible.
+
+Le prix conseillé est une estimation fondée sur les coûts saisis et la marge cible ; contrôlez les coûts réels, pertes, frais et prix du marché avant de l'utiliser.
+
+### Malagasy
+Ao amin'ny **Vokatra sy recette**, mamoròna recette ary fidio ireo akora na sous-recette efa voatahiry. Ampidiro ny habetsahana sy ny vondrona isaky ny andalana. Farito ny vokatra azo, ny fonosana, ny asa, ny sara ankapobeny ary ny taha tombony kendrena. Asehony ny vidin'ny akora sy ny sarany manontolo, ny vidin'ny ampahany iray ary ny vidiny atolotra. Ovaina araka ny vokatra tadiavina ny habetsahana.
+
+Miova ho azy ny kg/g sy L/mL. Ny vondrona hafa dia tsy maintsy mitovy tanteraka. Azo ampiasaina amin'ny recette maro ny sous-recette, fa lavina ny fifamatorana miverimberina. Rehefa ovaina ny recette dia tehirizina ny dikan-teny teo aloha, ny daty ary ny vidiny isaky ny ampahany.
+
+Tombana ihany ny vidiny atolotra. Hamarino ny vidiny tena izy, ny fatiantoka, ny sara ary ny vidin'ny tsena alohan'ny hampiasana azy.

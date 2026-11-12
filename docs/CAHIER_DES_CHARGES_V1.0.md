@@ -74,3 +74,17 @@ Responsive téléphone/tablette/PC ; saisie utilisable au tactile ; navigation c
 ## 8. Livraison et contrôle
 
 Dépôt dédié RMLala/patisspro-mg visé ; branche unique par Work depuis main ; PR obligatoire, aucune fusion sans autorisation. Actions : lint/tests JS, builds Debug, Release API23 et API29 ; secrets via GitHub Actions ; `versionName` inchangé entre variantes et `versionCode` augmenté uniquement pour livraison distribuée. Livrables : HTML autonome, sources Android, APK Debug, deux APK Release signées, guide FR/MG, changelog et rapport de tests. Une APK n'est déclarée construite, signée, installée ou testée qu'avec preuve de build/installation correspondante.
+
+
+## 9. Extension Premium — Phase 2 (12 novembre 2026)
+
+Le lot Phase 2 approfondit le module recettes et coûts :
+
+- Éditeur de recette avec lignes choisies dans le catalogue matière ou parmi les sous-recettes existantes ; quantité et unité sont saisies par ligne.
+- Unités normalisées compatibles : kg/g, L/mL et pièce(s). Une unité inconnue n'est convertie qu'avec une unité strictement identique ; les dimensions incompatibles sont signalées.
+- Calcul récursif du coût matière des sous-recettes, puis ajout de l'emballage, de la main-d'œuvre et des charges indirectes par lot.
+- Affichage du coût total par lot, coût par portion et prix de vente suggéré à partir d'un taux de marge cible (formule : coût unitaire / (1 − taux cible)). Le prix conseillé reste indicatif.
+- Ajustement proportionnel des besoins à un rendement souhaité et sauvegarde d'une version antérieure datée à chaque modification significative de la fiche.
+- Détection côté client d'une tentative de boucle de sous-recette ; les anciens enregistrements sont chargés avec des valeurs par défaut compatibles.
+
+Cette extension s'appuie encore sur la persistance locale du MVP. Elle ne remplace pas les achats avec fournisseurs, lots FIFO, droits multiutilisateurs, synchronisation Cloudflare, sauvegarde chiffrée ou intégration AppForge.
