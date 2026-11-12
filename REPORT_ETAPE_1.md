@@ -14,8 +14,10 @@
 ## Vérifications et preuves
 - `node --check` sur le JavaScript inline : réussi le 12/11/2026.
 - Tentative d’ouverture Chromium via Playwright : bloquée par l’environnement d’exécution (`socket() failed: Operation not permitted`), donc parcours navigateur non validé visuellement.
-- Build Gradle/APK : non exécuté ; cet environnement ne fournit ni Gradle, ni SDK Android.
-- GitHub : aucun dépôt PâtissPro existant n’a été trouvé dans RMLala. Le connecteur GitHub disponible ne propose pas la création de dépôt ; aucun push ni PR distant n’a donc été effectué.
+- Premier run GitHub Actions échoué sur le paquet SDK obsolète `tools`; workflow corrigé pour utiliser le SDK préinstallé.
+- GitHub Actions run #4 : réussi ; `assembleApi23Debug` et `assembleApi29Debug` réussis ; artefact Debug `PatissProMG-Debug-API23-API29` créé.
+- Dépôt privé `RMLala/patisspro-mg` ; branche distante `work/patisspro-mvp-2026-11-12` issue de `main`; PR #1 ouverte et non fusionnée.
+- Releases signées API23/API29 non produites : la tâche Release est réservée au workflow manuel/tag et aucun run Release n’a été déclenché.
 
 ## Limites / anomalies ouvertes
 - Le stockage du prototype HTML utilise `localStorage`; migration IndexedDB/base Android à faire avant usage réel intensif.
@@ -27,4 +29,4 @@
 ## Trois prochaines actions prioritaires
 1. Faire valider le périmètre V1.0 puis compléter les flux d’achat/réception, lots, recettes multi-niveaux et ordres de fabrication avec écritures de stock cohérentes.
 2. Rattacher le projet à `RMLala/patisspro-mg`, créer la branche `work/patisspro-mvp-2026-11-12` depuis `main`, pousser les sources et préparer une PR sans fusion.
-3. Exécuter les tests navigateur et Gradle dans l’environnement de build, configurer les secrets GitHub et produire les APK Debug/API23/API29 puis les deux Releases signées.
+3. Vérifier/configurer les secrets de signature dans le dépôt, lancer le build Release autorisé par le workflow puis contrôler les APK signées API23/API29.
