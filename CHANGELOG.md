@@ -12,3 +12,4 @@
 - Calcul du coût complet par lot et portion, prix conseillé depuis la marge cible, conversions kg/g et L/mL, ajustement de rendement.
 - Historique daté des versions et détection des cycles de sous-recettes.
 - Guide FR/MG et cahier des charges complétés ; l'intégration Cloud/AppForge et les lots FIFO restent à réaliser.
+- Formulaire Premium recettes bilingue FR/MG.

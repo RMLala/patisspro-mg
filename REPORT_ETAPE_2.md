@@ -6,7 +6,7 @@
 
 ## Réalisé dans le code
 
-- Éditeur de recette en lignes, avec sélection d’ingrédients ou de sous-recettes, quantité et unité.
+- Éditeur de recette en lignes FR/MG, avec sélection d’ingrédients ou de sous-recettes, quantité et unité.
 - Conversion des quantités kg/g, L/mL et unités/pièces ; unités incompatibles signalées dans le coût.
 - Calcul récursif du coût matière, puis ajout des coûts d’emballage, main-d’œuvre et charges indirectes.
 - Coût affiché par lot et par portion, prix conseillé selon marge cible.
