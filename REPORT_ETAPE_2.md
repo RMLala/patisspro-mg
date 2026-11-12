@@ -30,7 +30,7 @@
 - Comparaison du fichier HTML autonome et de l’asset Android : identiques au moment de la synchronisation.
 - Vérification des conversions et calculs : 8 assertions Node réussies (kg/g, L/mL, dimensions incompatibles, coût matière imbriqué, coût complet, unités de sous-recette et boucle).
 - Copie HTML autonome / asset Android : identiques.
-- Build Gradle local : indisponible, la commande `gradle` et le wrapper ne sont pas présents dans l’espace. GitHub Actions run #7 réussi le 12/11/2026 : les variantes `assembleApi23Debug` et `assembleApi29Debug` ont compilé et l’artefact Debug a été publié. Le job Release a été ignoré conformément au workflow.
+- Build Gradle local : indisponible, la commande `gradle` et le wrapper ne sont pas présents dans l’espace. GitHub Actions run #11 réussi le 12/11/2026 : les variantes `assembleApi23Debug` et `assembleApi29Debug` ont compilé et l’artefact Debug a été publié. Le job Release a été ignoré conformément au workflow.
 - Vérification visuelle Playwright : non réalisée, exécutable Chromium absent ; aucun parcours navigateur n’est déclaré vérifié.
 
 ## Limites connues
