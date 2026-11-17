@@ -1,0 +1,48 @@
+plugins { id 'com.android.application' }
+
+import java.util.Base64
+
+android {
+    namespace 'mg.patisspro'
+    compileSdk 35
+
+    defaultConfig {
+        applicationId 'mg.patisspro'
+        minSdk 23
+        targetSdk 35
+        versionCode 1
+        versionName '0.1.0'
+    }
+    flavorDimensions += 'androidApi'
+    productFlavors {
+        api23 { dimension 'androidApi'; minSdk 23; applicationIdSuffix '.api23' }
+        api29 { dimension 'androidApi'; minSdk 29; applicationIdSuffix '.api29' }
+    }
+
+    def keystoreData = System.getenv('ANDROID_KEYSTORE_BASE64')
+    def ks = file("${rootProject.projectDir}/release-key.jks")
+    if (keystoreData && !ks.exists()) ks.bytes = Base64.getDecoder().decode(keystoreData)
+    signingConfigs {
+        release {
+            if (keystoreData && System.getenv('ANDROID_KEYSTORE_PASSWORD') && System.getenv('ANDROID_KEY_ALIAS') && System.getenv('ANDROID_KEY_PASSWORD')) {
+                storeFile ks
+                storePassword System.getenv('ANDROID_KEYSTORE_PASSWORD')
+                keyAlias System.getenv('ANDROID_KEY_ALIAS')
+                keyPassword System.getenv('ANDROID_KEY_PASSWORD')
+            }
+        }
+    }
+    buildTypes {
+        debug { }
+        release {
+            minifyEnabled false
+            if (keystoreData) signingConfig signingConfigs.release
+        }
+    }
+}
+
+tasks.configureEach { task ->
+    if (task.name.toLowerCase().contains('release') && !task.name.toLowerCase().contains('test') && !System.getenv('ANDROID_KEYSTORE_BASE64')) {
+        task.doFirst { throw new GradleException('Missing Android Release signing secrets. Configure ANDROID_KEYSTORE_BASE64, ANDROID_KEYSTORE_PASSWORD, ANDROID_KEY_ALIAS and ANDROID_KEY_PASSWORD in GitHub Actions.') }
+    }
+}
